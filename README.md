@@ -22,6 +22,12 @@ The classification engine partitions streamflow into four hydrologic seasons:
 ## 📁 Repository Structure
 
 ```
+├── app.R                      # Interactive Shiny dashboard application
+├── stream_regime_classifier.R # Multi-station classification & visualization engine
+├── streamflow_daily_cache.rds # Pre-cached daily streamflow dataset for instant app launch
+├── colorado_streamflow_regime_seasonal_timing.csv # Multi-station seasonal timing results
+├── stream_flow_regime_analysis.Rmd # Multi-basin seasonal timing analysis report
+├── StreamRegime.Rproj         # RStudio Project configuration
 ├── R/
 │   ├── fetch_streamflow.R     # Ingestion for USGS NWIS & CO DWR OpenCDSS REST API v2
 │   ├── classify_regimes.R     # Quantile envelope & demarcation classification engine
@@ -39,7 +45,14 @@ The classification engine partitions streamflow into four hydrologic seasons:
 
 ## 🚀 Quickstart Guide
 
-### 1. Ingest Data and Classify Any Streamgage
+### 1. Launch the Interactive Shiny Dashboard
+Open `StreamRegime.Rproj` in RStudio and click **Run App** (or execute in R):
+```r
+shiny::runApp()
+```
+
+### 2. Ingest Data and Classify Any Streamgage
+
 ```r
 source("R/fetch_streamflow.R")
 source("R/classify_regimes.R")
@@ -69,7 +82,7 @@ p <- plot_regime_envelope(results$doy_envelopes, results$boundaries, results$thr
 print(p)
 ```
 
-### 2. Re-render the HTML Report
+### 3. Re-render the HTML Report
 ```bash
 Rscript render_report.R
 ```
