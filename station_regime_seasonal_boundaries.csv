@@ -1,0 +1,5 @@
+agency,site_id,station_name,runoff_start_doy,runoff_start_date,high_flow_start_doy,high_flow_start_date,high_flow_end_doy,high_flow_end_date,runoff_end_doy,runoff_end_date,t_demarcation_cfs
+USGS,06696980,"TARRYALL CREEK AT UPPER STATION NEAR COMO, CO",108,Apr 18,126,May 06,239,Aug 27,290,Oct 17,8.76
+USGS,06700000,"SOUTH PLATTE RIVER ABOVE CHEESMAN LAKE, CO.",130,May 10,142,May 22,237,Aug 25,249,Sep 06,100.88
+CO DWR,PLAANTCO,SOUTH PLATTE RIVER BELOW ANTERO RESERVOIR,137,May 17,149,May 29,209,Jul 28,221,Aug 09,3.27
+CO DWR,PLAHARCO,SOUTH PLATTE RIVER ABOVE ELEVENMILE RESERVOIR,103,Apr 13,115,Apr 25,282,Oct 09,294,Oct 21,58.75
