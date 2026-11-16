@@ -2,6 +2,9 @@
 
 An R-based hydrologic analysis toolkit developed for municipal water utilities and watershed scientists to diagnose, classify, and visualize streamflow regimes across **USGS** and **Colorado Division of Water Resources (DWR)** streamgage networks.
 
+🌐 **Live Interactive Web Report**: [https://maisiemoline.github.io/Stream-Regime/](https://maisiemoline.github.io/Stream-Regime/)  
+📊 **Upper South Platte Assessment**: [https://maisiemoline.github.io/Stream-Regime/stream_regime_classification.html](https://maisiemoline.github.io/Stream-Regime/stream_regime_classification.html)
+
 ---
 
 ## 🌊 Core Flow Regimes
@@ -22,11 +25,13 @@ The classification engine partitions streamflow into four hydrologic seasons:
 ## 📁 Repository Structure
 
 ```
+├── index.html                 # Main live webpage (GitHub Pages) with full multi-basin analysis
 ├── app.R                      # Interactive Shiny dashboard application
 ├── stream_regime_classifier.R # Multi-station classification & visualization engine
 ├── streamflow_daily_cache.rds # Pre-cached daily streamflow dataset for instant app launch
 ├── colorado_streamflow_regime_seasonal_timing.csv # Multi-station seasonal timing results
 ├── stream_flow_regime_analysis.Rmd # Multi-basin seasonal timing analysis report
+├── stream_flow_regime_analysis.html # Rendered multi-basin analysis report
 ├── StreamRegime.Rproj         # RStudio Project configuration
 ├── R/
 │   ├── fetch_streamflow.R     # Ingestion for USGS NWIS & CO DWR OpenCDSS REST API v2
@@ -45,13 +50,19 @@ The classification engine partitions streamflow into four hydrologic seasons:
 
 ## 🚀 Quickstart Guide
 
-### 1. Launch the Interactive Shiny Dashboard
-Open `StreamRegime.Rproj` in RStudio and click **Run App** (or execute in R):
-```r
-shiny::runApp()
-```
+### 1. View Directly in Any Browser
+Anyone can view the full interactive report immediately without installing R or any software:  
+👉 **[https://maisiemoline.github.io/Stream-Regime/](https://maisiemoline.github.io/Stream-Regime/)**
 
-### 2. Ingest Data and Classify Any Streamgage
+### 2. Launch the Shiny App from GitHub
+If someone has R/RStudio installed, they can launch the interactive Shiny app directly from your GitHub repo with a single command:
+```r
+shiny::runGitHub("Stream-Regime", "maisiemoline")
+```
+Or open `StreamRegime.Rproj` in RStudio and click **Run App** (or run `shiny::runApp()`).
+
+### 3. Ingest Data and Classify Any Streamgage
+
 
 ```r
 source("R/fetch_streamflow.R")
@@ -82,7 +93,7 @@ p <- plot_regime_envelope(results$doy_envelopes, results$boundaries, results$thr
 print(p)
 ```
 
-### 3. Re-render the HTML Report
+### 4. Re-render the HTML Report
 ```bash
 Rscript render_report.R
 ```
