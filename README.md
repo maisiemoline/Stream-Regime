@@ -2,8 +2,7 @@
 
 An R-based hydrologic analysis toolkit developed for municipal water utilities and watershed scientists to diagnose, classify, and visualize streamflow regimes across **USGS** and **Colorado Division of Water Resources (DWR)** streamgage networks.
 
-🌐 **Live Interactive Web Report**: [https://maisiemoline.github.io/Stream-Regime/](https://maisiemoline.github.io/Stream-Regime/)  
-📊 **Upper South Platte Assessment**: [https://maisiemoline.github.io/Stream-Regime/stream_regime_classification.html](https://maisiemoline.github.io/Stream-Regime/stream_regime_classification.html)
+🌐 **Live Interactive Web Report**: [https://maisiemoline.github.io/Stream-Regime/](https://maisiemoline.github.io/Stream-Regime/)
 
 ---
 
@@ -37,9 +36,7 @@ The classification engine partitions streamflow into four hydrologic seasons:
 │   ├── fetch_streamflow.R     # Ingestion for USGS NWIS & CO DWR OpenCDSS REST API v2
 │   ├── classify_regimes.R     # Quantile envelope & demarcation classification engine
 │   └── plot_regimes.R         # Publication-grade ggplot2 visualizations
-├── stream_regime_classification.Rmd   # Comprehensive R Markdown report
-├── stream_regime_classification.html  # Rendered standalone HTML report
-├── render_report.R            # Script to re-render the HTML report
+├── render_report.R            # Script to re-render analysis reports
 ├── test_classification.R      # Automated test script for pilot sites
 ├── daily_flow_regimes_classified.csv  # Full daily classified records (2000–2023)
 ├── station_regime_seasonal_boundaries.csv # Seasonal transition calendar dates

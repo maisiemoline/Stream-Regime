@@ -12,7 +12,7 @@ output:
       collapsed: false
       smooth_scroll: true
     toc_depth: 3
-    code_folding: show
+    code_folding: hide
     df_print: paged
     fig_width: 10
     fig_height: 7
@@ -48,25 +48,6 @@ knitr::opts_chunk$set(
 # 1. Executive Summary & Hydrological Methodology
 
 This report implements an automated, validated streamflow regime classification engine for managed and natural river systems across Colorado. The classification framework is based on **daily hydrograph percentile envelopes**, a **baseflow demarcation threshold ($Q_{\text{demarc}}$)**, and an **adaptive high flow runoff curve ($Q_P$)**.
-
-```
-  Discharge (cfs)
-       ^
-       |                      ******************  [Daily Max Envelope Q_max(d)]
-       |                    **                  **
-       |                   *   ================   *
-       |                  *    |   HIGH FLOW  |    *   [20th–40th %ile Runoff Curve Q_P(d)]
-       |                 *     |    SEASON    |     *   (Contiguous >= 1.5 Months)
-  - - - - - - - - - - - * - - -================- - - -* - - - - - - [Demarcation Line Q_demarc]
-       |               *                               *
-       |   ========== *                                 * ==========
-       |   |   LOW   |                                   |   LOW   |
-       |   |  FLOW   |  |<- Rising ->|   |<- Receding ->| |  FLOW   |
-       |   | SEASON  |  |  Shoulder  |   |  Shoulder    | | SEASON  |
-       |   ===========                                   ===========
-       +------------------------------------------------------------> Day of Year (doy)
-          Fall/Winter           Spring       Late Summer     Fall/Winter
-```
 
 ## Why Gauged Data is Used (Managed vs Naturalized Flows)
 In heavily managed river basins (such as the Upper South Platte, Colorado River headwaters, and Front Range tributaries), streamflow is governed by upstream storage reservoirs, trans-basin diversions, municipal water rights, and irrigation calls. 
